@@ -1,0 +1,65 @@
+td img {
+	width: 60vw;
+	height: 40vh;
+}
+table {
+	display: inline-flex;
+	overflow-x: scroll;
+	width: 100vw;
+	margin-top: 35%;
+}
+tr {
+	margin:5% 5% 5% 7%;
+}
+#buy {
+	font-size: 2rem;
+    font-weight: 600;
+    font-family: Arial;
+	padding: 2%;
+	background-color: white;
+	border-radius: 15px;
+	border: solid lightgrey 4px;
+	color: black;
+	margin: 0vw 23vw 0vw 22vw ;
+}
+#shirt {
+	color: black;
+}
+#close {
+	background-color: white;
+    padding: 1%;
+    width: 5vw;
+    border-radius: 5px;
+    margin-bottom: 2%;
+    font-size: 30px;
+    border: solid black 2px;
+    margin-left: auto;
+}
+#poh {
+	color: white;
+	text-align: center;
+	font-weight: 400;
+	font-size: 40px;
+	background-color: black;
+	border-radius: 5px;
+}
+.order {
+	color: white;
+	font-size: 30px;
+	font-weight: 400;
+	background-color: transparent;
+	border-color: transparent;
+}
+.size {
+	color: grey;
+	font-size: 30px;
+	font-weight: 400;
+	background-color: white;
+}
+select {
+	background-color: white;
+	width: 5vw;
+	height: 5vw;
+	font-size: 25px;
+	margin-bottom: 3%;
+}
