@@ -20,7 +20,11 @@ const db = new Client({
   ssl: true,
 })
 db.connect()
-app.listen(3000,  () => console.log("Example app listening on port 3000!"));
+const PORT = process.env.PORT || 3000
+
+var server = app.listen(PORT || 3000, function() {
+	console.log("lisening on port number %d", server.address().port);
+});
 app.get('/', (req, res) => res.sendFile(__dirname+"/src/js/app.js"));
 
 app.get('/logo',(req,res) => res.sendFile(__dirname+"/public/static/doyalogo.svg"));
