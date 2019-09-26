@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const crypto = require('crypto');
 const squareConnect = require('square-connect');
 var nodemailer = require('nodemailer');
+const react = require('react');
+const reactDOM = require('react-dom')
 var client = squareConnect.ApiClient.instance;
 client.basePath = 'https://connect.squareupsandbox.com';
 var oauth2 = client.authentications['oauth2'];
@@ -22,52 +24,18 @@ app.listen(3000,  () => console.log("Example app listening on port 3000!"));
 app.get('/', (req, res) => res.sendFile(__dirname+"/src/js/app.js"));
 
 app.get('/logo',(req,res) => res.sendFile(__dirname+"/public/static/doyalogo.svg"));
-app.get('/email', function(req, res){
-	var params  = req.body
-	var data = Object.keys(params)[0].split('\"');
-  //var params = change.replace('\\/[\\{}"]+/g'," ")
-  var nonce = data[3]
-  var name = data[7]
-  var address = data[11]
-  var size = data[15]
-  var shirt = data[19]
-  var email = data[23]
-  var zipcode = data[27]
-	console.log(data)
-	var transporter = nodemailer.createTransport({
-  		service: 'Zoho',
-  		auth: {
-    		user: 'james@bareminimum.site',
-    		pass: 'NE_patriots12'
-  		}
-	});
-	var mailOptions = {
-  		from: 'james@bareminimum.site',
-  		to: 'eric@doya.us',
-  		subject: 'New Preorder from '+name,
-  		html: '<h3>Name:</h3><p>'+name+'</p><br><h3>Email:</h3><p>'+email+'</p><h3>Address:</h3><p>'+address+'</p><h3>Zipcode:</h3><p>'+zipcode,
-	}
-	var preorderConfirmation = {
-		from: 'james@bareminimum.site',
-		to: email,
-		subject: 'Preorder Confirmation',
-		html: '<h1>Thank you for preordering a '+size+':'+shirt+'</h1><br><p>You can reach out to this email directly or contact DOYA through Instagram for more information on your order</p>'
-	}
-	transporter.sendMail(preorderConfirmation, function(error, info){
-  		if (error) {
-    		console.log(error);
-  		} else {
-    		console.log('Email sent: ' + info.response);
-  			}
-		})
-	transporter.sendMail(preorderConfirmation, function(error, info){
-		if (error){
-			console.log(error)
-		} else {
-			console.log('Email sent: ' + info.response)
-		}
-	})
+app.get('/orders', function(req, res){
+	res.send("<p>Hello</p>")
 });
+// app.get('/receipts', function(req, res){
+// 	var query = "SELECT * FROM doya.orders";
+// 	db.query(query, function(err, results){
+// 		if(err){
+// 			console.log(err)
+// 		}
+// 		console.log(results.rows)
+// 	})
+// });
 app.post('/pay', async (req,res)=> {
 	console.log(req.body)
 	res.send("hello")})

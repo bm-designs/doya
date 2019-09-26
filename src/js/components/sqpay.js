@@ -198,10 +198,10 @@ module.exports = {
               })
               .then(data => {
                 console.log(JSON.stringify(data));
-                fetch("email", {
-                  method:"GET",
-                  body:JSON.stringify(body)
-              }).then(response => {console.log(JSON.stringify(response.body))});
+              //   fetch("email", {
+              //     method:"POST",
+              //     body:JSON.stringify(body)
+              // }).then(response => {console.log(JSON.stringify(response.body))});
                   alert('Payment complete successfully!\nCheck browser developer consolf form more details');
               })
               .catch(err => {
