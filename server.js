@@ -1,6 +1,7 @@
 const express = require("express")
 const bodyParser = require('body-parser');
 const crypto = require('crypto');
+const path = require("path")
 const squareConnect = require('square-connect');
 var nodemailer = require('nodemailer');
 const react = require('react');
