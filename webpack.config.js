@@ -1,5 +1,6 @@
 const path = require("path");
 const webpack = require('webpack');
+const debug = process.env.NODE_ENV !== "production";
 
 module.exports = {
     target: 'node',
@@ -11,7 +12,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, "public"),
         filename: "bundle.js",
-        publicPath: "/public"
+        publicPath: "./public"
     }, 
     module: {
         rules: [
