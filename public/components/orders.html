@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOYA Orders</title>
+	<link rel="stylesheet" type="text/css"  href="orders.css" charset="utf-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
+</head>
+<body>
+	<div id="wrapper">
+		<div class="inventory">
+			<ol id="items">
+				<h2>Orders</h2>
+			
+				
+			</ol>
+				
+		</div>
+	</div>
+	<script>
+		function status(response) {
+		  if (response.status >= 200 && response.status < 300) {
+		    return Promise.resolve(response)
+		  } else {
+		    return Promise.reject(new Error(response.statusText))
+		  }
+		}
+
+		function json(response) {
+		  return response.json()
+		}
+
+		fetch('/orders')
+		  .then(status)
+		  .then(json)
+		  .then(function(data) {
+		    console.log(data);
+		    for (i=0; i<=data.length;i++) {
+		    	var insertNode = document.createElement("li");
+		    	document.getElementById("items").appendChild(insertNode)
+		    	var nameLabel = document.createElement("P");
+		    	nameLabel.innerHTML  = "Name: "+data[i].name;
+		    	insertNode.appendChild(nameLabel)
+		    	var emailLabel = document.createElement("P");
+		    	emailLabel.innerHTML = "Email: "+data[i].email;
+		    	insertNode.appendChild(emailLabel)
+		    	var shirtLabel = document.createElement("P");
+		    	shirtLabel.innerHTML = "Shirt: "+data[i].shirt;
+		    	insertNode.appendChild(shirtLabel)
+				var sizeLabel = document.createElement("P");
+				sizeLabel.innerHTML = "Size: "+data[i].size;
+		    	insertNode.appendChild(sizeLabel)	
+		    	var addressLabel = document.createElement("P");
+		    	addressLabel.innerHTML = "Address: "+data[i].address;
+		    	insertNode.appendChild(addressLabel)
+		    	var zipcodeLabel = document.createElement("P");
+		    	zipcodeLabel.innerHTML = "Zipcode: "+data[i].zipcode;
+		    	insertNode.appendChild(zipcodeLabel)
+		    	
+		    }
+		  }).catch(function(error) {
+		    console.log('Request failed', error);
+		  });
+		// fetch("/orders", {method:"GET"}).then(response => {
+		// 	console.log(Promise.resolve(response.json()))
+
+		// })
+	</script>
+</body>
+</html>

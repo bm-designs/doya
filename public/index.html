@@ -2,17 +2,69 @@
 <html>
   <head>
     <title>DOYA</title>
-    <script type="text/javascript" src="https://js.squareupsandbox.com/v2/paymentform">
-    </script> 
+    <script type="text/javascript" src="https://js.squareupsandbox.com/v2/paymentform"/></script> 
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
-    
+    <link rel="stylesheet" type="text/css" href="index.css">
   </head>
   <body style="background-color: black; margin:0;">
-    <div id="app">   	
-    </div>
-    
-    <script src="./bundle.js"></script>
-    
+    <div id="app">
+	      <img id="header" src='/logo'/>	   	
+    	<div>
+        <table>
+          <tr>
+            <td><img src='/008'/></td>
+            <br>
+            <td><img src='/008a'/></td>
+          </tr>
+          <tr>
+            <td><img src='/009'/></td>
+            <br/>
+            <td><img src='/009a'/>
+          </tr>
+          <tr>
+            <td><img src='011'/></td>
+            <br/>
+            <td><img src='011a'/></td>
+          </tr>
+          <tr>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <button id="buy" onclick="openForm()">Preorder</button>
+        <div id="form-container" ref="formContainer" style='visibility: hidden;'>
+          <button id="close" onclick="closeForm()">X</button>
+          <h1 id="poh">Preorder</h1>
+          <h1 class="order"> Choose Shirt </h1>
+          <select id="shirt">
+            <option> Cherry </option>
+            <option> Moon </option>
+            <option> Zombie </option>
+          </select>
+          <h1 class="size">Choose Size</h1>
+          <select id="size">
+            <option> S </option>
+            <option> M </option>
+            <option> L </option>
+          </select>
+        <div id="sq-card-number"></div>
+          <div class="third" id="sq-expiration-date"></div>
+           <div class="third" id="sq-cvv"></div>
+           <div class="third" id="sq-postal-code"></div>
+           <input class="sq-input" id='shippingaddress' type="text" name="shippingaddress" placeholder="123 James St"/>
+           <input  class="sq-input" id='shippingname' type="text" name="name" placeholder="John Doe"/>
+           <input  class="sq-input" id='email' type="email" name="email" placeholder="john@doya.us"/>
+           <input  class="sq-input" id='zipcode' type="text" name="zipcode" placeholder="94949"/>
+            <button id="sq-creditcard" class="button-credit-card" onclick="getNonce()">Pay $30.00</button>
+          </div>
+      </div>
 
+      <script type="text/javascript" src="/index.js"></script>
+    <script src="./components/sqpay.js"></script>
+	</div>
   </body>
 </html>

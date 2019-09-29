@@ -1,0 +1,28 @@
+body{
+	margin: 0;
+	background-color: black;
+	font-family: Helvetica;
+	font-size: 14px;
+}
+.inventory {
+	width: 100vw;
+	background-color: white;
+	border-radius: 5px;
+	height: 90vh;
+	overflow-y: scroll;
+	display: i;
+	
+	margin-top: 10%;
+}
+
+label {
+	border:solid 1px black;
+}
+ol {
+	border:solid black 2px;
+	padding: 4%;
+}
+li {
+	border-bottom: black solid 1px;
+	padding: 0;
+}
