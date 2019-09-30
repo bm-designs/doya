@@ -101,6 +101,7 @@ app.get("/orders", function(req, res){
 
 /*Images*/
 app.get('/logo',(req,res)=> res.sendFile(__dirname+"/static/imgs/doyalogo.svg"))
+app.get('/buynow',(req,res)=> res.sendFile(__dirname+"/static/imgs/buynow.png"))
 app.get('/008', (req,res)=> res.sendFile(__dirname+"/static/imgs/doya008.jpg"))
 app.get('/008a', (req,res)=> res.sendFile(__dirname+"/static/imgs/doya008a.jpg"))
 app.get('/009', (req,res)=> res.sendFile(__dirname+"/static/imgs/doya009.jpg"))

@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>DOYA</title>
-    <script type="text/javascript" src="https://js.squareupsandbox.com/v2/paymentform"/></script> 
+    <!-- <script type="text/javascript" src="https://js.squareupsandbox.com/v2/paymentform"/></script> --> 
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="index.css">
   </head>
@@ -35,9 +35,11 @@
             <td></td>
           </tr>
         </table>
-        <button id="buy" onclick="openForm()">Preorder</button>
+        <div id="centerit">
+          <button id="buy" onclick="openForm()">Preorder</button>
+        </div>
         <div id="form-container" ref="formContainer" style='visibility: hidden;'>
-          <button id="close" onclick="closeForm()">X</button>
+          <!-- <button id="close" onclick="closeForm()">X</button>
           <h1 id="poh">Preorder</h1>
           <h1 class="order"> Choose Shirt </h1>
           <select id="shirt">
@@ -58,13 +60,33 @@
            <input class="sq-input" id='shippingaddress' type="text" name="shippingaddress" placeholder="123 James St"/>
            <input  class="sq-input" id='shippingname' type="text" name="name" placeholder="John Doe"/>
            <input  class="sq-input" id='email' type="email" name="email" placeholder="john@doya.us"/>
-           <input  class="sq-input" id='zipcode' type="text" name="zipcode" placeholder="94949"/>
-            <button id="sq-creditcard" class="button-credit-card" onclick="getNonce()">Pay $30.00</button>
+           <input  class="sq-input" id='zipcode' type="text" name="zipcode" placeholder="94949"/> -->
+           <form id="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+              <input type="hidden" name="cmd" value="_s-xclick">
+              <input type="hidden" name="hosted_button_id" value="NJ6C35F73D9KJ">
+              <table>
+              <tr><td><input type="hidden" name="on0" value="Shirt Options">Shirt Options</td></tr><tr><td><select name="os0">
+                <option value="Cherry">Cherry $30.00 USD</option>
+                <option value="Zombie">Zombie $30.00 USD</option>
+                <option value="Moon">Moon $30.00 USD</option>
+              </select> </td></tr>
+              <tr><td><input type="hidden" name="on1" value="Size">Size</td></tr><tr><td><select name="os1">
+                <option value="Small">Small </option>
+                <option value="Medium">Medium </option>
+                <option value="Large">Large </option>
+              </select> </td></tr>
+              </table>
+              <input type="hidden" name="currency_code" value="USD">
+              <input id="buynow" type="image" src="/buynow" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+              <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+              </form>
+
+            <!-- <button id="sq-creditcard" class="button-credit-card" onclick="getNonce()">Pay $30.00</button> -->
           </div>
       </div>
 
       <script type="text/javascript" src="/index.js"></script>
-    <script src="./components/sqpay.js"></script>
+    <!-- <script src="./components/sqpay.js"></script> -->
 	</div>
   </body>
 </html>

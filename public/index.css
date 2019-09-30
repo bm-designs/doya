@@ -27,8 +27,7 @@ fieldset {
 }
 
 #form-container {
-  position: absolute;
-  background-color: white;
+  background-color: black;
   display: grid;
   width: 80vw;
   margin: 0 auto;
@@ -37,7 +36,20 @@ fieldset {
   border-radius: 20px;
   margin-left: 6vw;
   visibility: hidden;
+  border: white solid 2px;
 
+}
+#paypal {
+  background-color: black;
+  color: white;
+}
+#paypal table {
+  background-color: black;
+  width: 80%;
+  margin: 0;
+}
+#paypal table td {
+  background-color: black;
 }
 
 .third {
@@ -124,15 +136,22 @@ table {
 tr {
 	margin:5% 5% 5% 7%;
 }
-#buy {
-	font-size: 1.5rem;
-	margin-left: 34%; 
-	background-color: white;
+#buynow {
+	background-color: black;
 	border-radius: 15px;
-	border: solid green 4px;
-	color: black;
-	font-family: inherit;
 	
+}
+#centerit {
+  margin-left: 35vw;
+    margin-right: 35vw;
+}
+#buy {
+  font-size: 1.5rem;
+  background-color: white;
+  border-radius: 15px;
+  color: black;
+  margin-bottom: 3%;
+  font-family: inherit;
 }
 #shirt {
 	color: black;
