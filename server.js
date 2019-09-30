@@ -15,14 +15,14 @@ var oauth2 = client.authentications['oauth2'];
 oauth2.accessToken = "EAAAECkmJ2Kz2o0AZJTFGfiQQyryl6_q0umjm1YuPNQFx98QJfgqxP5cLyRr1rOi";
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname+'/public'));
-const {Pool, Client} = require('pg');
+// const {Pool, Client} = require('pg');
 //const connectionString = 'postgresql://jlaskk:miami014@localhost:5432/BMDB'
-const connectionString = 'postgres://igaadmdcybtzah:ce4e9ef2f4d53070acb7d4c6c80be2e731b0bf7358a7ab2673bd055a433a87f0@ec2-54-225-241-25.compute-1.amazonaws.com:5432/d3b1ct3mjklqlb'
-const db = new Client({
-  connectionString: connectionString,
-  ssl: true,
-})
-db.connect()
+// const connectionString = 'postgres://igaadmdcybtzah:ce4e9ef2f4d53070acb7d4c6c80be2e731b0bf7358a7ab2673bd055a433a87f0@ec2-54-225-241-25.compute-1.amazonaws.com:5432/d3b1ct3mjklqlb'
+// const db = new Client({
+//   connectionString: connectionString,
+//   ssl: true,
+// })
+// db.connect()
 const PORT = process.env.PORT || 3000
 
 var server = app.listen(PORT || 3000, function() {
