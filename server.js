@@ -79,20 +79,20 @@ app.post('/process-payment', async (req, res) => {
   }
 
 });
-app.get('/doyasecretlink', function(req,res) {
-  res.sendFile(__dirname+"/public/components/orders.html")
-})
-app.get("/orders", function(req, res){
-  db.query("SELECT * FROM doya.orders", function(err, result){
-    if(err){
-      console.log(err)
-      res.sendFile(__dirname+"/public/index.html")
-    }
-    var data = result.rows
-    console.log(data)
-    res.send(data)
-  })
-})
+// app.get('/doyasecretlink', function(req,res) {
+//   res.sendFile(__dirname+"/public/components/orders.html")
+// })
+// app.get("/orders", function(req, res){
+//   db.query("SELECT * FROM doya.orders", function(err, result){
+//     if(err){
+//       console.log(err)
+//       res.sendFile(__dirname+"/public/index.html")
+//     }
+//     var data = result.rows
+//     console.log(data)
+//     res.send(data)
+//   })
+// })
 
 
 
