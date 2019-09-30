@@ -36,7 +36,6 @@ fieldset {
   border-radius: 20px;
   margin-left: 6vw;
   visibility: hidden;
-  border: white solid 2px;
 
 }
 #paypal {
@@ -139,6 +138,7 @@ tr {
 #buynow {
 	background-color: black;
 	border-radius: 15px;
+  border-top: solid white 2px;
 	
 }
 #centerit {
@@ -189,8 +189,13 @@ tr {
 }
 select {
 	background-color: white;
-	width: 100%;
+	width: 75vw;
 	height: 6vw;
 	font-size: 15px;
 	margin-bottom: 3%;
+}
+#about {
+  color: white;
+  line-height: 1.2;
+  text-align: center;
 }
