@@ -142,16 +142,16 @@ tr {
 	
 }
 #centerit {
-  margin-left: 35vw;
-    margin-right: 35vw;
+  margin-left: 5vw;
 }
 #buy {
   font-size: 1.5rem;
   background-color: white;
-  border-radius: 15px;
+  border-radius: 5px;
   color: black;
   margin-bottom: 3%;
   font-family: inherit;
+  width: 90vw;
 }
 #shirt {
 	color: black;
