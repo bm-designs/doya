@@ -177,7 +177,7 @@ module.exports = {
               fetch('process-payment', {
                 method: 'POST',
                 headers: {
-                  'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
+                  'Accept': 'application/json',
                   'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
                   },
                 body:JSON.stringify(body)
